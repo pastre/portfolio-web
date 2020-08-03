@@ -1,0 +1,62 @@
+.all {
+  text-align: center;
+  background-color: #000;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.Home {
+  text-align: center;
+  background-color: #000;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeEncapsulated {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding-left: 40px;
+  padding-right: 20px;
+  
+  min-width: 90vw;
+  max-height: 40vh;
+}
+
+.aboutMe {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+
+  height: 50vh;
+
+}
+
+.name {
+  justify-content: flex-start;
+  font-weight: bolder;
+  font-size: calc(28px + 6vmin);
+}
+
+.info {
+  font-size: calc(8px + 1vmin);
+  font-weight: lighter;
+  line-height: 40px;
+}
+
+.myImage {
+
+  height: 50vh;
+  width: auto;
+
+  background-color: none;
+}
