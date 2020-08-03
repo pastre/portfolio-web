@@ -1,32 +1,33 @@
-.all {
-  text-align: center;
+html, body {
+    margin: 0;
+    min-height: 100%;
+    overflow: auto;
+  scroll-behavior:smooth
+}
+body {
+  height:  -webkit-fill-available;
   background-color: #000;
+  color: #fff;
   font-family: 'Montserrat', sans-serif;
+  
 }
 
-.Home {
-  text-align: center;
-  background-color: #000;
-  min-height: 100vh;
-  min-width: 100vw;
+.Content {
+
+  margin: 50px;
+}
+.Page {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 }
 
-.homeEncapsulated {
-  background-color: #000;
-  color: #fff;
+.Home {
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  padding-left: 40px;
-  padding-right: 20px;
-  
-  min-width: 90vw;
-  max-height: 40vh;
 }
 
 .aboutMe {
@@ -34,21 +35,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
   text-align: left;
-
-  height: 50vh;
-
 }
 
 .name {
+
   justify-content: flex-start;
   font-weight: bolder;
-  font-size: calc(28px + 6vmin);
+  font-size: 60px;
+
 }
 
 .info {
-  font-size: calc(8px + 1vmin);
+  font-size: 18px;
   font-weight: lighter;
   line-height: 40px;
 }
@@ -60,3 +59,61 @@
 
   background-color: none;
 }
+
+.bobona {
+}
+
+.topnav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+
+  
+  position: fixed;
+  padding-top: 10px;
+  width: calc(100% - 100px);
+  margin-left: 50px;
+}
+
+.topnav .topnav-items {
+  align-items: center;
+}
+
+.topnav-items img {
+  height: 24px;
+  width: auto;
+  margin-left: 20px;
+}
+
+.topnav-buttons {
+  background-color: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.topnav-buttons a {
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 0px 10px;
+
+}
+
+.topnav-buttons a:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.Work-header {
+  font-size: 60px;
+  width: 100%;
+  text-align: center;
+}
+
+
