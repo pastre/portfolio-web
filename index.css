@@ -51,6 +51,10 @@ body {
   line-height: 40px;
 }
 
+.description {
+  width: 50%
+}
+
 .myImage {
 
   height: 50vh;
@@ -111,6 +115,10 @@ body {
 }
 
 .Work {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   text-align: center;
   min-height: 100vh;
   min-width: 100vw;
@@ -120,19 +128,33 @@ body {
 .Work-header {
   font-size: calc(2vw + 2vh + 2vmin);
   min-width: 100vw;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
   justify-content: center;
+}
+
+.Work-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 100%
 }
 
 .Work-cell {
   position: relative;
   display: inline-block;
+  padding: 20px;
 }
 
 .Work-item {
   border-radius: 10px;
   border: 1px solid #111111;
 }
+
+.Work-link  {
+  color: none;
+}
+
 .Work-cellOverlay { 
   position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
