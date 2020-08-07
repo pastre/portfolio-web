@@ -4,6 +4,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css" />
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="index.js"> </script>
 	<title>Bruno Pastre</title>
 	
@@ -12,11 +13,26 @@
 <body>
 	<script type="text/javascript">
 		
-		function bootstrap() {
-			loadApps()
+		function getOverlay(event) {
+
+			var cell = Array.from(event.srcElement.childNodes).filter( div => div.className === "Work-cell" )[0]
+			console.log(cell.childNodes)
+			return overlay = Array.from(cell.childNodes).filter( div => div.className === "Work-cellOverlay" )[0]
 		}
-		window.onload = bootstrap;
+
+		function onHover(event) {
+			var overlay = getOverlay(event)
+			$(overlay).fadeIn("fast")
+		}
+
+		function onOut(event) {
+			var overlay = getOverlay(event)
+			$(overlay).fadeOut("fast")
+
+		}
+
 	</script>
+
 	<div class = "bobona">
 
 		<div class="topnav">
@@ -26,25 +42,26 @@
 			  <a href="https://medium.com/@pastre68" target="_blank"><img src="mediumWhite.svg"></a>
 			</div>
 			<div class="topnav-buttons">
-			  <a href="#home" >Home</a>
-			  <a href="#work">Portfolio</a>
-			  <a href="#contact">Contact</a>
+			  <a href="#home" >Home</a> 
+			  <a href="#work">Portfolio</a> 
+			  <a href="#contact">Contact</a> 
 			</div>
 		</div>
 	</div>
 		
 	<div class="Content">
-
-		
 		<div class = "Page" id="home">
 			<div class="Home">
 					<div class = "aboutMe">
 						<div class = "name"> Bruno <br /> Pastre </div>
 
-						<div >
+						<div>
 			    			<div class = "info"> <b>Passionate</b> software developer </div>
 			    			<div class = "info"> <b>Creative</b> design student </div>
 			    			<div class = "info"> <b>Curitiba</b> | Brazil </div>
+						</div>
+						<div>
+							I’m a software developer currently living in Curitiba, Paraná. I’m studying Computer Engineering at PUCPR and iOS develpment at Apple Developer Academy, and have developed around 15 apps, of which 10 are published.  When I’m not on my PC, I’m usually playing the guitar, watching a TV series, reading, or having a beer with friends
 						</div>
 					</div>
 
@@ -58,12 +75,19 @@
 		    	<div class = "Work-header"> 
 		    		Bruno's <b>Work</b>
 		    	</div>
+				<a href="" onmouseenter="onHover(event)" onmouseleave="onOut(event)">
+		    		<div class = "Work-cell">
+						<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/92/13/71/92137127-ba14-9620-2052-2a8b5ee66295/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/217x0w.png" class="Work-item" /> 
 
-				<div class = "Work-cellsTable">
+					<div class="Work-cellOverlay"> 
+						<div class="Work-cellOverlayTitle"> 	Harmonify 
+						</div>
+					</div> 
 
 				</div>
+		    	</div>
 
-		    </div>
+			</a>
 		</div>
 	</div>
 
