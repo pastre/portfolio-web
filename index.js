@@ -125,10 +125,12 @@ var cellContent = {
 		function displayModal(cellName, event) {
 			updateModalContent(cellName, event)
 			getWorldDetail().style.display = "flex"
+			lockScroll()
 		}
 
 		function dismissModal() {
 			getWorldDetail().style.display = "none"
+			unlockScroll()
 		}
 
 		function lockScroll() {
