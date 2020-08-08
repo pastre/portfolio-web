@@ -1,0 +1,74 @@
+@media screen and (max-width: 769px) {
+
+  .Content {
+    margin: 0px 20px;
+  }
+  .myImage {
+    width: 80vw;
+    height: auto;
+  }
+
+  .aboutMe {
+
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .Home {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .name {
+
+    font-weight: bolder;
+    font-size: 36px;
+
+  }
+
+  .info {
+    font-size: 10px;
+    font-weight: lighter;
+    line-height: 20px;
+    width: 80vw;
+
+  }
+
+  .description {
+    width: 80vw;
+    font-size: 10px;
+    font-weight: lighter;
+    text-align: left;
+  }
+
+  .topnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #111111;
+
+    position: fixed;
+    padding-top: 10px;
+    width: 100vw;
+    margin-left: 0px;
+  }
+
+
+  .topnav-items img {
+    height: 10px;
+    width: 10px;
+    margin-left: 0px;
+  }
+
+  .topnav-items {
+    display: none; 
+  }
+
+  .topnav .topnav-items {
+    align-items: flex-start;
+  }
+}
