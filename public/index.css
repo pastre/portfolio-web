@@ -16,6 +16,7 @@ html, body {
 .Content {
   margin: 50px;
 }
+
 .Page {
   height: 100vh;
   display: flex;
@@ -28,6 +29,7 @@ html, body {
   flex-direction: row;
   justify-content: space-between;
 }
+
 
 .aboutMe {
 
@@ -54,13 +56,62 @@ html, body {
 .description {
   width: 50%
 }
-
+  
 .myImage {
 
+  object-fit: scale-down;
   height: 50vh;
   width: auto;
 
   background-color: none;
+}
+
+@media screen and (max-width: 769px) {
+
+  .Content {
+    margin: 20px;
+  }
+  .myImage {
+    width: 80vw;
+    height: auto;
+  }
+
+  .aboutMe {
+
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .Home {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .name {
+
+    font-weight: bolder;
+    font-size: 36px;
+
+  }
+
+  .info {
+    font-size: 10px;
+    font-weight: lighter;
+    line-height: 20px;
+    width: 80vw;
+
+  }
+
+  .description {
+    width: 80vw;
+    font-size: 10px;
+    font-weight: lighter;
+    text-align: left;
+  }
 }
 
 .bobona {
@@ -193,10 +244,12 @@ html, body {
 }
 
 .Work-cellOverlayTitle { 
+
   position: absolute;
   width: 100%;
   top: 50%;
   color: #fff;
   font-weight: bold;
   font-size: 24px;
+
 }
