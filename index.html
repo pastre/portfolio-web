@@ -2,7 +2,9 @@
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="WorkDescription.css" />
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="index.js"> </script>
@@ -12,39 +14,39 @@
 
 <body>
 	<script type="text/javascript">
-		
-		function getOverlay(event) {
+		function cellClicked (event) {
+			var cellName;
 
-			var cell = Array.from(event.srcElement.childNodes).filter( div => div.className === "Work-cell" )[0]
-			console.log(cell.childNodes)
-			return overlay = Array.from(cell.childNodes).filter( div => div.className === "Work-cellOverlay" )[0]
-		}
-
-		function onHover(event) {
-			var overlay = getOverlay(event)
-			$(overlay).fadeIn("fast")
-		}
-
-		function onOut(event) {
-			var overlay = getOverlay(event)
-			$(overlay).fadeOut("fast")
+			if(event.target.className === "Work-cellOverlayTitle") {
+				cellName = event.target.textContent.trim()
+			} else {
+				cellName = Array.from(event.target.childNodes).filter(cell => cell.className === "Work-cellOverlayTitle" )[0].textContent.trim()
+			}
 
 		}
 
-		function hideAll() {
-			var overlays = document.getElementsByClassName("Work-cellOverlay")
-			console.log("IOverlays", overlays)
-			Array.from(overlays).forEach( overlay => $(overlay).fadeOut("fast"))
+		function displayModal(event) {
+
 		}
 
 		function bootstrap() {
-			//hideAll()
-		}
+			console.log("Oi!")
 
+			var cells = Array.from(document.getElementsByClassName("Work-cell"))
+
+			console.log(cells)
+
+			cells.forEach (cell => cell.addEventListener("click", event => cellClicked(event)))
+		}
 
 		window.onload = bootstrap
 	</script>
 
+
+	<div class="WorkDetail">
+		ASsA
+	</div>
+	
 	<div class = "bobona">
 
 		<div class="topnav">
@@ -88,81 +90,68 @@
 		    		Bruno's <b>Work</b>
 		    	</div>
 		    	<div class="Work-row">
-					<a href="" onmouseenter="onHover(event)" onmouseleave="onOut(event)">
-			    		<div class = "Work-cell">
-							<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/92/13/71/92137127-ba14-9620-2052-2a8b5ee66295/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/217x0w.png" class="Work-item" /> 
+		    		<div class = "Work-cell">
+						<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/92/13/71/92137127-ba14-9620-2052-2a8b5ee66295/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/217x0w.png" class="Work-image" /> 
 
-							<div class="Work-cellOverlay"> 
-								<div class="Work-cellOverlayTitle">
-								 	Harmonify 
-								</div>
-							</div> 
-						</div>
-					</a>
+						<div class="Work-cellOverlay"> 
+							<div class="Work-cellOverlayTitle">
+							 	Harmonify 
+							</div>
+						</div> 
+					</div>
 
-					<a href="" onmouseenter="onHover(event)" onmouseleave="onOut(event)">
-			    		<div class = "Work-cell">
-							<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/ca/10/c2/ca10c21e-fa9c-8a95-902c-372a6dc46ea2/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png " class="Work-item" /> 
+		    		<div class = "Work-cell">
+						<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/ca/10/c2/ca10c21e-fa9c-8a95-902c-372a6dc46ea2/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" class="Work-image" /> 
 
-							<div class="Work-cellOverlay"> 
-								<div class="Work-cellOverlayTitle">
-								 	Pocket Pastre 
-								</div>
-							</div> 
-						</div>
-					</a>
+						<div class="Work-cellOverlay"> 
+							<div class="Work-cellOverlayTitle">
+							 	Pocket Pastre 
+							</div>
+						</div> 
+					</div>
 
-					<a href="" onmouseenter="onHover(event)" onmouseleave="onOut(event)">
-			    		<div class = "Work-cell">
-							<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/ba/e9/40/bae940e9-a3fd-dccb-6256-44d868b36575/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" class="Work-item" /> 
+					<div class = "Work-cell">
+						<img src="https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/ba/e9/40/bae940e9-a3fd-dccb-6256-44d868b36575/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" class="Work-image" /> 
 
-							<div class="Work-cellOverlay"> 
-								<div class="Work-cellOverlayTitle">
-								 	Zombie! Apocalypse 
-								</div>
-							</div> 
-						</div>
-					</a>
+						<div class="Work-cellOverlay"> 
+							<div class="Work-cellOverlayTitle">
+							 	Zombie! Apocalypse 
+							</div>
+						</div> 
+					</div>
+
 				</div>
 				<div class="Work-row">
-					<a href="" onmouseenter="onHover(event)" onmouseleave="onOut(event)" class="Work-link">
-			    		<div class = "Work-cell">
-			    			<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/80/49/4c/80494cea-c730-cb97-8bbd-6321c22c0485/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" class="Work-item" /> 
-							<div class="Work-cellOverlay"> 
-								<div class="Work-cellOverlayTitle">
-								 	.space 
-								</div>
-							</div> 
-						</div>
-					</a>
+					<div class = "Work-cell">
+						<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/80/49/4c/80494cea-c730-cb97-8bbd-6321c22c0485/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" class="Work-image" /> 
 
+						<div class="Work-cellOverlay"> 
+							<div class="Work-cellOverlayTitle">
+							 	.space 
+							</div>
+						</div> 
+					</div>
+
+					<div class = "Work-cell">
+						<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/75/5f/3f/755f3ff3-001f-a3d5-e1a9-734e7a6929fe/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" class="Work-image" /> 
+
+						<div class="Work-cellOverlay"> 
+							<div class="Work-cellOverlayTitle">
+							 	Relibox 
+							</div>
+						</div> 
+					</div>
 					
-					<a href="" onmouseenter="onHover(event)" onmouseleave="onOut(event)">
-			    		<div class = "Work-cell">
-							<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/75/5f/3f/755f3ff3-001f-a3d5-e1a9-734e7a6929fe/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" class="Work-item" /> 
+					<div class = "Work-cell">
+						<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/09/bd/f6/09bdf6a4-af61-c55b-108b-4ee1f8f86df9/AppIcon-0-0-1x_U007emarketing-0-0-0-8-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" class="Work-image" /> 
 
-							<div class="Work-cellOverlay"> 
-								<div class="Work-cellOverlayTitle">
-								 	Relibox 
-								</div>
-							</div> 
-						</div>
-					</a>
-
-					<a href="" onmouseenter="onHover(event)" onmouseleave="onOut(event)">
-			    		<div class = "Work-cell">
-							<img src="https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/09/bd/f6/09bdf6a4-af61-c55b-108b-4ee1f8f86df9/AppIcon-0-0-1x_U007emarketing-0-0-0-8-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.png" class="Work-item" /> 
-
-							<div class="Work-cellOverlay"> 
-								<div class="Work-cellOverlayTitle">
-								 	Cube H 
-								</div>
-							</div> 
-						</div>
-					</a>
+						<div class="Work-cellOverlay"> 
+							<div class="Work-cellOverlayTitle">
+							 	Cube H  
+							</div>
+						</div> 
+					</div>
 				</div>
-
-
 			</div>
 		</div>
 	</div>
