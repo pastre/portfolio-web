@@ -14,49 +14,7 @@
 
 <body class="default locked">
 	<script type="text/javascript">
-		function cellClicked (event) {
-			var cellName;
-
-			if(event.target.className === "Work-cellOverlayTitle") {
-				cellName = event.target.textContent.trim()
-			} else {
-				cellName = Array.from(event.target.childNodes).filter(cell => cell.className === "Work-cellOverlayTitle" )[0].textContent.trim()
-			}
-			displayModal()
-		}
-
-		function getWorldDetail() {
-			return document.getElementsByClassName("WorkDetail")[0]
-		}
-
-		function displayModal(event) {
-			getWorldDetail().style.display = "flex"
-		}
-
-		function dismissModal() {
-			getWorldDetail().style.display = "none"
-		}
-
-		function lockScroll() {
-			var body = document.getElementsByTagName("html")[0];
-			console.log(body.style.overflow)
-			body.style.overflow = "hidden";
-		}
-
-		function unlockScroll() {
-
-			var body = document.getElementsByTagName("html")[0];
-
-			body.style.overflow = "";
-		}
-
-		function bootstrap() {
-			console.log("Oi!")
-
-			var cells = Array.from(document.getElementsByClassName("Work-cell"))
-
-			cells.forEach (cell => cell.addEventListener("click", event => cellClicked(event)))
-		}
+		
 
 		window.onload = bootstrap
 	</script>
@@ -65,29 +23,24 @@
 	<div class="WorkDetail">
 		<div class="WorkDetail-Content">
 
-			<div class="WorkDetail-Content-Absolute">
-				<div class="WorkDetail-Close">
-					<img src="close.svg" />
-				</div>
-			</div>
 
 			<div class="WorkDetail-Container">	
 				<img src="mock-phone.png" />
 				<div class="WorkDetail-Text">
-					<span class= "WorkDetail-Title">
+					<div class= "WorkDetail-Title">
 						ASDQWE
-					</span>
+					</div>
 
 					<div class="WorkDetail-Links">
 						<span class="WorkDetail-Call">
 							Check it out:
 						</span>
 
-						<div class="WorkDetail-ImageLink">
+						<div class="WorkDetail-ImageLink" onclick="presentAppStore()">
 							<img src="applelogo.svg">
 						</div>
 
-						<div class="WorkDetail-ImageLink">
+						<div class="WorkDetail-ImageLink" onclick="presentGithub()" >
 							<img src="githubWhite.svg">
 						</div>
 
@@ -97,13 +50,19 @@
 					</div>
 
 					<div class="WorkDetail-Description">
-						<b>Stack: </b>UIKit, AdMob, Firebase Database, Firebase Auth, CoreGraphics, CoreImage, AutoLayout, MetalKit
+						ygihgh
 					</div>
 
 					<div class="WorkDetail-Description">
-						
-						<b>Process: </b>To develop harmonify, I read a book on color theory to understand palette generation and color pigments and the math behind it. I then started to design screens on Sketch to properly preview the app. Having designed the app, I jumped into Xcode and started to program the app. Having developed an MVP, I interviwed some collegues and figured out that being able to quickly export to macOS was an important thing, I developed a macOS app that syncs with the palettes generated on the app.  With the app published on the App Store, I did some usability tests to understand how some people interact with the app, and to get some insights about how to improve it and how to monetize it. Since then, I am developing a version with some freemium features and improving the app. t
+						tfh	
 					</div>
+				</div>
+			</div>
+
+
+			<div class="WorkDetail-Content-Absolute">
+				<div class="WorkDetail-Close">
+					<img src="close.svg" />
 				</div>
 			</div>
 		</div>

@@ -27,126 +27,127 @@ var model =
 	],
 	loadedApps: []
 };
+var cellContent = {
+			
+			"Harmonify" : {
+				"WorkDetail-Title" : "Harmonify",
+				"images": 
+					[ 
+						'https://apps.apple.com/us/app/harmonify-cores-e-paletas/id1467642991?l=pt',
+					 	'https://github.com/pastre/color-palette'
+					 ],
+				"WorkDetail-Description": [ "<b>Stack: </b>UIKit, AdMob, Firebase Database, Firebase Auth, CoreGraphics, CoreImage, AutoLayout, MetalKit", "<b>Process: </b>To develop harmonify, I read a book on color theory to understand palette generation and color pigments and the math behind it. I then started to design screens on Sketch to properly preview the app. Having designed the app, I jumped into Xcode and started to program the app. Having developed an MVP, I interviwed some collegues and figured out that being able to quickly export to macOS was an important thing, I developed a macOS app that syncs with the palettes generated on the app.  With the app published on the App Store, I did some usability tests to understand how some people interact with the app, and to get some insights about how to improve it and how to monetize it. Since then, I am developing a version with some freemium features and improving the app. "] ,
 
-var viewsToDisplay = [];
+			},
 
-function doScrap(htmlString, url) {
-	var el = document.createElement( 'html' );
-	el.innerHTML = htmlString;
-	const name = el.getElementsByClassName("product-header__title app-header__title")[0].innerHTML.split("<")[0].trim()
-	const descriptionHTML = el.getElementsByClassName("we-truncate we-truncate--multi-line we-truncate--interactive ember-view l-column small-12 medium-9 large-8")[0].children[0].innerHTML
-	const imageTags = el.getElementsByClassName("l-row l-row--peek we-screenshot-viewer__screenshots-list")[0].getElementsByTagName("li")
-	var images = []
+			"Pocket Pastre" : {
+				"WorkDetail-Title" : "Pocket Pastre",
+				"images": 
+					[ 
+						'https://apps.apple.com/us/app/pocket-pastre/id1497205539?l=pt',
+					 	'https://github.com/pastre/nc4'
+					 ],
+				"WorkDetail-Description": [ "<b>Stack: </b>UIKit, AdMob, Firebase Database, Firebase Auth, CoreGraphics, CoreImage, AutoLayout, MetalKit", "<b>Process: </b>To develop harmonify, I read a book on color theory to understand palette generation and color pigments and the math behind it. I then started to design screens on Sketch to properly preview the app. Having designed the app, I jumped into Xcode and started to program the app. Having developed an MVP, I interviwed some collegues and figured out that being able to quickly export to macOS was an important thing, I developed a macOS app that syncs with the palettes generated on the app.  With the app published on the App Store, I did some usability tests to understand how some people interact with the app, and to get some insights about how to improve it and how to monetize it. Since then, I am developing a version with some freemium features and improving the app. "] ,
+			},
 
-	for(let li of imageTags) {
-	const source = li.getElementsByClassName("we-artwork__source")[0].srcset.split(" ")[0]
-	images.push(source)
-	}
+			"Zombie! Apocalypse" : {
 
-	var newApp = {
-		name: name.includes('Harmonify') ? 'Harmonify': name.includes('Bubbles') ? "Bubbles" : name,
-		descriptionHTML: descriptionHTML,
-		images: images,
-		appstoreUrl: url,
-		githubUrl: model.repos[model.urls.indexOf(url)]
+			},
+
+			".space" : {
+
+			},
+
+			"Relibox" : {
+
+			},
+
+			"Cube H" : {
+
+			}
 		}
-	drawApp(newApp, true)
-}
+
+		var presentedContent;
+
+		function cellClicked (event) {
+			var cellName;
+
+			if(event.target.className === "Work-cellOverlayTitle") {
+				cellName = event.target.textContent.trim()
+			} else {
+				cellName = Array.from(event.target.childNodes).filter(cell => cell.className === "Work-cellOverlayTitle" )[0].textContent.trim()
+			}
+			
+			displayModal(cellName, event)
+		}
+
+		function getWorldDetail() {
+			return document.getElementsByClassName("WorkDetail")[0]
+		}
+
+		function updateModalContent(cellName, event) {
+			var content = cellContent[cellName]
+
+			presentedContent = content
+
+			console.log("content", content)
+			var titleDiv = document.getElementsByClassName("WorkDetail-Title")[0]
+			var imageDivs = document.getElementsByClassName("WorkDetail-ImageLink")
+			var descriptionDivs = document.getElementsByClassName("WorkDetail-Description")
+
+			titleDiv.innerHTML = content["WorkDetail-Title"]
 
 
-function doGet(url) {
-	var xhr = new XMLHttpRequest()
+			for(var i  = 0; i < descriptionDivs.length; i++) {
+				descriptionDivs[i].innerHTML = content["WorkDetail-Description"][i]
+			}
 
-	xhr.addEventListener('load', () => {
-		this.doScrap(xhr.responseText, url)
-    })
+		}
 
-	xhr.addEventListener('error', () => {
-		console.log("DEU RUIM")
-    })
-    // open the request with the verb and the url
-    xhr.open('GET', url)
-    // send the request
-    xhr.send()
-}
+		function presentAppStore() {
+			openInNewTab(presentedContent["images"][0])
+		}
 
-function loadApps() {
-	model.urls.forEach( value => this.doGet(value) )
-}
+		function presentGithub() {
+			openInNewTab(presentedContent["images"][1])
+		}
+
+		function openInNewTab(url) {
+			window.open(url, "_blank")
+		}
 
 
-function drawApp(app) {
-
-	var parent = document.getElementsByClassName("Work-cellsTable")[0]
-	var component = workCell(app, true)
-	//parent.setAttribute("class", "Work-cellContent")
-	parent.appendChild(component)
+		function presentOnNewTab(url) {
+			console.log("Navigating to", url)
+		}
 
 
-	console.log(component)
-}
+		function displayModal(cellName, event) {
+			updateModalContent(cellName, event)
+			getWorldDetail().style.display = "flex"
+		}
 
+		function dismissModal() {
+			getWorldDetail().style.display = "none"
+		}
 
+		function lockScroll() {
+			var body = document.getElementsByTagName("html")[0];
+			console.log(body.style.overflow)
+			body.style.overflow = "hidden";
+		}
 
-function workCell(work, isImageFirst) {
+		function unlockScroll() {
 
-	var parent = document.createElement("div")
+			var body = document.getElementsByTagName("html")[0];
 
-	parent.setAttribute("class", "Work-workCell")
+			body.style.overflow = "";
+		}
 
-	var imageDiv = workCellImage(work);
-	var contentDiv =  workCellContent(work)
+		function bootstrap() {
+			console.log("Oi!")
 
-	if (isImageFirst) {
-		parent.appendChild(imageDiv)
-		parent.appendChild(contentDiv)
-	} else {
-		parent.appendChild(contentDiv)
-		parent.appendChild(imageDiv)
-	}
+			var cells = Array.from(document.getElementsByClassName("Work-cell"))
 
-	return parent
-}
-
-function workCellImage(work) {
-	var component = document.createElement("div", {"class": "asdqwe"})
-	
-	component.setAttribute("class", "Work-workCellImage")
-	
-	return component
-}
-
-function workCellContent(work) {
-	var component = document.createElement("div", {"class": "asdqwe"})
-	
-	component.setAttribute("class", "Work-cellContent")
-	
-	component.innerHTML =  (
-		`
-				<div class = "Work-cellContent">
-					<div class = "Work-cellTitleContainer">
-
-						<div class = "Work-cellTitle">
-							<b>${ work.name }</b>
-						</div>
-						<div class = "Work-imageLink">
-							<a href="${work.appstoreUrl}" target="_blank"><img src="applelogo.svg" ></a>
-							<a href="${work.githubUrl}" target="_blank"><img src="githubWhite.svg" ></a>
-						</div>
-					</div>
-
-					<div class = "Work-cellDescription">
-						${ this.stripHtml(work.descriptionHTML.replace("<br>", ". "))}		
-					</div>
-				
-				</div>
-		`)
-
-	return component
-}
-
-function stripHtml(html) {
-	   var tmp = document.createElement("DIV");
-	   tmp.innerHTML = html;
-	   return tmp.textContent || tmp.innerText || "";
-}
+			cells.forEach (cell => cell.addEventListener("click", event => cellClicked(event)))
+		}
