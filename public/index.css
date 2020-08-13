@@ -123,13 +123,12 @@ html, body {
 
   text-align: center;
   min-height: 100vh;
-  min-width: 100vw;
 }
 
 
 .Work-header {
   font-size: calc(2vw + 2vh + 2vmin);
-  min-width: 100vw;
+  width: 100%;
   padding-bottom: 80px;
   justify-content: center;
 }
@@ -141,7 +140,7 @@ html, body {
 
   width: 100%;
 
-  margin:  20px 0px;
+  margin:  20px 20px;
 }
 
 .Work-cell {

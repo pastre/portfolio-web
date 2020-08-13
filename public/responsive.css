@@ -1,10 +1,23 @@
 @media screen and (max-width: 769px) {
+  html, body {
+    margin: 0;
+    overflow: auto;
+    scroll-behavior:smooth;
+  }
 
   .Content {
-    margin: 0px 20px;
   }
+
+  .Page {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .myImage {
-    width: 80vw;
+    width: 100%;
+    padding-left: -20px;
     height: auto;
   }
 
@@ -21,6 +34,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    padding-top: 100px;
   }
 
   .name {
@@ -28,33 +42,38 @@
     font-weight: bolder;
     font-size: 36px;
 
+    padding: 20px 0px;
   }
 
   .info {
     font-size: 10px;
     font-weight: lighter;
     line-height: 20px;
-    width: 80vw;
+    width: 100%;
 
   }
 
   .description {
-    width: 80vw;
+    width: 100%;
     font-size: 10px;
     font-weight: lighter;
     text-align: left;
+    padding: 20px 0px;
   }
 
   .topnav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     background: #111111;
 
     position: fixed;
     padding-top: 10px;
-    width: 100vw;
+    width: 100%;
     margin-left: 0px;
+
+    z-index: 998;
   }
 
 
@@ -69,38 +88,47 @@
   }
 
   .topnav .topnav-items {
-    align-items: flex-start;
+    align-items: center;
   }
 
 
-  .Work-cell {
-    position: relative;
+  .Work {
     display: flex;
-    flex-direction: row;
-    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
 
-    height: 30%;
-    width: auto;
-
-    margin: 0px 0px;
+    text-align: center;
+    padding-top: 100px;
   }
 
   .Work-header {
-
-    width: 100vw;
-    margin-left: -20px;
+    width: 100%;
+    height: auto;
   }
 
 
   .Work-row {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-    width: 100vw;
-    margin-left: -20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
+  .Work-cell {
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .Work-image {
+    border-radius: 10px;
+    height: 100%;
+    width: auto;
+  }
 
   .Work-cellOverlayTitle { 
 
