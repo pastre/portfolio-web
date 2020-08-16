@@ -31,7 +31,7 @@ var cellContent = {
 	
 	"Harmonify" : {
 		"WorkDetail-Title" : "Harmonify",
-		"images": 
+		"links": 
 			[ 
 				'https://apps.apple.com/us/app/harmonify-cores-e-paletas/id1467642991?l=pt',
 			 	'https://github.com/pastre/color-palette'
@@ -42,7 +42,7 @@ var cellContent = {
 
 	"Pocket Pastre" : {
 		"WorkDetail-Title" : "Pocket Pastre",
-		"images": 
+		"links": 
 			[ 
 				'https://apps.apple.com/us/app/pocket-pastre/id1497205539?l=pt',
 			 	'https://github.com/pastre/pocket-pastre'
@@ -52,7 +52,7 @@ var cellContent = {
 
 	"Zombie! Apocalypse" : {
 		"WorkDetail-Title" : "Zombie! Apocalypse",
-		"images": 
+		"links": 
 			[ 
 				'https://apps.apple.com/us/app/zombie-apocalypse/id1504183894?l=pt',
 			 	'https://github.com/pastre/nc4'
@@ -67,7 +67,7 @@ var cellContent = {
 
 	".space" : {
 		"WorkDetail-Title" : ".space",
-		"images": 
+		"links": 
 			[ 
 				'https://apps.apple.com/us/app/space/id1477382763?l=pt',
 			 	'https://github.com/pastre/celeste'
@@ -80,7 +80,7 @@ var cellContent = {
 
 	"Relibox" : {
 		"WorkDetail-Title" : "Relibox",
-		"images": 
+		"links": 
 			[ 
 				'https://apps.apple.com/us/app/relibox/id1483243383?l=pt',
 			 	'https://github.com/purplelipstick89/challenge-2'
@@ -94,7 +94,7 @@ var cellContent = {
 
 	"Cube H" : {
 		"WorkDetail-Title" : "Cube H",
-		"images": 
+		"links": 
 			[ 
 			 	'https://apps.apple.com/us/app/cube-h/id1491076636?l=pt',
 				'https://github.com/pastre/startupeiros',
@@ -104,7 +104,52 @@ var cellContent = {
 			"<b>Process: </b> Cube H was developed by 4 people, and we started off by brainstorming and deciding a theme to work on. Then, we interviewed some people to better understand the product we wanted to develop, and we decided to work on an idle multplayer game. We, then, distributed our efforts into microsservices: logical model, front-end, firebase and game balancing. The first thing I did was to co-create and explain a shared data model for my fellow developers, so that everyone could start coding from the same ground. Then, using a moodboard a friend created, I designed a low fidelity wireframe that was used as a base for the rest of the project. Then, I started to develop local microsservices, working mainly on data manipulation and integrity, as the other developer was working on UI and firebase sync. Since we were using a solid model, the integration between the areas was really straight-forward. We then started to work on minigames. In one of the games, we trained a neural network to recognize doodles and challenge the user to draw an emoji. In another, we used our own source code and challenge the user to tap as fast as he can to work faster. The last game is strongly inspired by flappy bird, and we used SpriteKit "
 		],
 
-	}
+	},
+
+
+	"Horários PUCPR" : {
+		"WorkDetail-Title" : "Horários PUCPR",
+
+		"links": 
+			[ 
+			 	'https://apps.apple.com/us/app/cube-h/id1491076636?l=pt',
+				'https://github.com/pastre/ttpuc-flutter',
+			],
+
+		"WorkDetail-Description": [ 
+			"<b>Stack: </b> Flutter, Dart, Flask, REST, SQLAlchemy, Python requests framework, Beautiful Soup, Web Scrapping, Firebase",
+			"<b>Process: </b> Horários PUCPR is an application developed to help the students of PUCPR to keep up with the challenges of the academic life. It was developed completely independently from the university, which, by the time, had zero official mobile presence. I developed the mobile app, designed the API following RESTful principles, structured the database, created an automated scrapper and connected all those things to make the regular student's life easier through the power of technology. HoráriosPUCPR was never published on the App Store, but we had forms open for anyone to join the beta, and had around 500 candidates to test it"
+		],
+
+	},
+
+	"Web Development" : {
+		"WorkDetail-Title" : "Web Development",
+		"links": 
+			[ 
+			 	'https://apps.apple.com/us/app/cube-h/id1491076636?l=pt',
+				'https://github.com/pastre/startupeiros',
+			],
+		"WorkDetail-Description": [ 
+			"<b>Stack: </b> HTML, CSS, Javascript, ReactJS, Firebase",
+			"<b>Process: </b> The first web site Bruno has ever developed was a single page app to help PUCPR students preview the classes they were interesested in taking. It was developed using ReactJS and hosted at Firebase. His second and last web project is this website you are seeing, which has a much richier development process. He started by fetching references and creating a moodboard about how he wanted the site to look like. Then, he started it using ReactJS, but figured out he wanted to learn about some vanilla web development, and switched over to HTML, CSS and Javascript."
+		],
+
+	},
+
+	"dod vision" : {
+		"WorkDetail-Title" : "dod vision",
+		"links": 
+			[ 
+			 	'https://apps.apple.com/us/app/cube-h/id1491076636?l=pt',
+				'https://github.com/pastre/startupeiros',
+			],
+		"WorkDetail-Description": [ 
+			"<b>Stack: </b>Microsservices Architecture, Design Patters, IPv4 protocol, IEEE 802 protocols, opencv, Embedded Systems, Hardware Monitoring, Firebase, Flask, DevOps, ReactJS",
+			"<b>Story: </b> dod is a startup based in Curitiba, Brazil, which I worked on for a year and 2 months. Over there, I started by modeling the database, developing the backend and assisting in the front end. After a while, I changed to the production team, where I proposed a microservices architecture running on the cloud, and worked on integrating all services using design patterns. From those services, I developed the Database, which was queried by the frontend; Camera Monitor, which accessed data from costumers; Health Monitor, which logs performance and errors; Showroom, which processed our information into a video to showcase on conferences; NNetwork Manager, which manages how images are processed to optimize GPU usage; and integrated 6 different video processing services, 4 of which use Machine Learning. Having that up and running, I started to work on optimization, and figured out that it would be too expensive to keep running neural networks on the cloud, so we pivoted and embedded the system. I developed the system's lifecycle, ported the cloud system into our hardware, worked on automatic updates, developed  services related to the hardware and user interface, and setup an automatic process for new firmware creation. After that, I started to work on another project, and studied the IEEE 802 protocol and the OSI model, specifically the media layers, to try to triangulate someone using WiFi. Due to some privacy concerns, that project was put aside, which lead me back to the production team, where I integrated a new service based on emotion recognition and implemented its visualization "
+		],
+
+	},
 }
 
 var presentedContent;
@@ -145,11 +190,11 @@ function updateModalContent(cellName, event) {
 }
 
 function presentAppStore() {
-	openInNewTab(presentedContent["images"][0])
+	openInNewTab(presentedContent["links"][0])
 }
 
 function presentGithub() {
-	openInNewTab(presentedContent["images"][1])
+	openInNewTab(presentedContent["links"][1])
 }
 
 function openInNewTab(url) {
